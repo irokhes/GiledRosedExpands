@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiledRosedExpands.Domain", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiledRosedExpands.Infrastructure", "GiledRosedExpands.Infrastructure\GiledRosedExpands.Infrastructure.csproj", "{EFB8E159-1D53-4C1C-9048-4D071BC68DDF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiledRosedExpands.IntegrationTests", "GiledRosedExpands.IntegrationTests\GiledRosedExpands.IntegrationTests.csproj", "{1CDCB8AF-A9B4-4BFA-9FAF-DEA593FDB97A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{EFB8E159-1D53-4C1C-9048-4D071BC68DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFB8E159-1D53-4C1C-9048-4D071BC68DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFB8E159-1D53-4C1C-9048-4D071BC68DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CDCB8AF-A9B4-4BFA-9FAF-DEA593FDB97A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CDCB8AF-A9B4-4BFA-9FAF-DEA593FDB97A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CDCB8AF-A9B4-4BFA-9FAF-DEA593FDB97A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CDCB8AF-A9B4-4BFA-9FAF-DEA593FDB97A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

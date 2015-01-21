@@ -17,6 +17,12 @@ namespace GiledRosedExpands.Controllers
             _itemRepository = itemRepository;
         }
 
+        [HttpGet]
+        public IHttpActionResult Get(int id)
+        {
+            return Ok(_purchaseRepository.Get(id));
+        }
+
         [HttpPost]
         public IHttpActionResult Post(PurchaseViewModel purchaseViewModel)
         {

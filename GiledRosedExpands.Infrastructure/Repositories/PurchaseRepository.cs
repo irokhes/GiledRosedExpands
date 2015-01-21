@@ -21,7 +21,7 @@ namespace GiledRosedExpands.Infrastructure.Repositories
 
         public int Create(Purchase purchase)
         {
-            purchase.Id = _purchaseList.Select(x => x.Id).OrderBy(x => x).Last() + 1;
+            purchase.Id = _purchaseList.Count + 1;
             _purchaseList.Add(purchase);
             return purchase.Id;
         }
