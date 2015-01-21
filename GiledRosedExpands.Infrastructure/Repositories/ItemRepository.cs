@@ -13,9 +13,9 @@ namespace GiledRosedExpands.Infrastructure.Repositories
         {
             _itemList = new List<Item>()
             {
-                new Item{ Id=1, Name = "Item 1", Description = "Description item 1", Price = 10},
-                new Item{ Id=2, Name = "Item 2", Description = "Description item 2", Price = 20},
-                new Item{ Id=3, Name = "Item 3", Description = "Description item 3", Price = 30},
+                new Item{ Name = "Item 1", Description = "Description item 1", Price = 10},
+                new Item{ Name = "Item 2", Description = "Description item 2", Price = 20},
+                new Item{ Name = "Item 3", Description = "Description item 3", Price = 30},
             };    
         }
         public IEnumerable<Item> GetAll()
@@ -23,9 +23,9 @@ namespace GiledRosedExpands.Infrastructure.Repositories
             return _itemList;
         }
 
-        public Item Get(int id)
+        public Item Get(string name)
         {
-            return _itemList.Find(x => x.Id == id);
+            return _itemList.Find(x => x.Name == name);
         }
     }
 }

@@ -6,6 +6,6 @@ namespace GiledRosedExpands.Domain.Repositories
     public interface IItemRepository
     {
         IEnumerable<Item> GetAll();
-        Item Get(int id);
+        Item Get(string name);
     }
 }

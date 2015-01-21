@@ -31,7 +31,7 @@ namespace GiledRosedExpands.Controllers
                 //Return error
                 BadRequest(ModelState);
             }
-            var item = _itemRepository.Get(purchaseViewModel.ItemId);
+            var item = _itemRepository.Get(purchaseViewModel.ItemName);
             if (item == null)
             {
                 return BadRequest("The item is no longer available");

@@ -21,8 +21,8 @@ namespace GiledRosedExpands.Tests
 
         Because of = () =>
         {
-            The<IItemRepository>().WhenToldTo(x => x.Get(Param.IsAny<int>())).Return(new Item());
-            result = Subject.Post(new PurchaseViewModel { ItemId = 1 });
+            The<IItemRepository>().WhenToldTo(x => x.Get(Param.IsAny<string>())).Return(new Item());
+            result = Subject.Post(new PurchaseViewModel { ItemName = "fixie bike" });
         };
         It should_return_ok = () =>
         {
@@ -43,14 +43,14 @@ namespace GiledRosedExpands.Tests
         static int _purchaseId = 3;
         Establish context = () =>
         {
-            The<IItemRepository>().WhenToldTo(x => x.Get(Param.IsAny<int>())).Return((Item) null);
+            The<IItemRepository>().WhenToldTo(x => x.Get(Param.IsAny<string>())).Return((Item) null);
             The<IPurchaseRepository>().WhenToldTo(x => x.Create(Param.IsAny<Purchase>())).Return(_purchaseId);
 
         };
 
         Because of = () =>
         {
-            result = Subject.Post(new PurchaseViewModel { ItemId = 1 });
+            result = Subject.Post(new PurchaseViewModel { ItemName = "XP Book" });
         };
         It should_return_bad_request_result = () =>
         {
