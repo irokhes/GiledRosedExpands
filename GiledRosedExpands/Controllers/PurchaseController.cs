@@ -1,6 +1,7 @@
+using System;
 using System.Web.Http;
-using GiledRosedExpands.Models;
-using GiledRosedExpands.Repository;
+using GiledRosedExpands.Domain.Models;
+using GiledRosedExpands.Domain.Repositories;
 using GiledRosedExpands.ViewModel;
 
 namespace GiledRosedExpands.Controllers
@@ -31,7 +32,9 @@ namespace GiledRosedExpands.Controllers
             }
             var purchase = new Purchase
             {
-                
+                Item = item,
+                Date = DateTime.Now,
+                Username = purchaseViewModel.Username
             };
             purchaseViewModel.PurchaseId = _purchaseRepository.Create(purchase);
             return CreatedAtRoute("DefaultApi", new {id = 3}, purchaseViewModel);

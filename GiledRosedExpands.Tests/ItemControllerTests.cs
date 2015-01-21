@@ -3,9 +3,9 @@ using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Results;
 using GiledRosedExpands.Controllers;
-using GiledRosedExpands.Models;
-using GiledRosedExpands.Repository;
+using GiledRosedExpands.Domain.Repositories;
 using GiledRosedExpands.ViewModel;
+using GiledRosedExpands.Domain.Models;
 using Machine.Fakes;
 using Machine.Specifications;
 

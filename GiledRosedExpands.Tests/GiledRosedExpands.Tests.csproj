@@ -79,9 +79,14 @@
     <Compile Include="PurchaseControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GiledRosedExpands.Domain\GiledRosedExpands.Domain.csproj">
+      <Project>{e35be9ad-1057-4477-83bd-913a2d94139d}</Project>
+      <Name>GiledRosedExpands.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GiledRosedExpands\GiledRosedExpands.csproj">
       <Project>{D8A1498B-ADE0-4D8D-8B36-ED96572FB2AB}</Project>
       <Name>GiledRosedExpands</Name>

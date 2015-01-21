@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using GiledRosedExpands.Models;
+using GiledRosedExpands.Domain.Models;
 
-namespace GiledRosedExpands.Repository
+namespace GiledRosedExpands.Domain.Repositories
 {
     public interface IItemRepository
     {

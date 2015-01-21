@@ -1,11 +1,11 @@
 ﻿using System.Web.Http;
 using System.Web.Http.Results;
 using GiledRosedExpands.Controllers;
-using GiledRosedExpands.Models;
-using GiledRosedExpands.Repository;
+using GiledRosedExpands.Domain.Repositories;
 using GiledRosedExpands.ViewModel;
 using Machine.Fakes;
 using Machine.Specifications;
+using GiledRosedExpands.Domain.Models;
 
 namespace GiledRosedExpands.Tests
 {
