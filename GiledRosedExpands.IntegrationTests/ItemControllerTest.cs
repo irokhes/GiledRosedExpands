@@ -65,6 +65,8 @@ namespace GiledRosedExpands.IntegrationTests
 
             HttpResponseMessage response = httpClient.SendAsync(request).Result;
 
+            Debug.Write(response.Content.ReadAsStringAsync().Result);
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
             Assert.NotNull(response.Content);
             Assert.NotNull(response.Content.Headers.ContentType);
             
@@ -75,14 +77,15 @@ namespace GiledRosedExpands.IntegrationTests
 
         // Setup
         [SetUp]
-        public void SampleTests()
+        public void SetUpTests()
         {
             NinjectWebCommon.Start();
             baseAddress = string.Format("http://{0}:9090", Environment.MachineName);
 
             HttpSelfHostConfiguration config = new HttpSelfHostConfiguration(this.baseAddress);
             config.Routes.MapHttpRoute("API Default", "api/{controller}/{id}", new { id = RouteParameter.Optional });
-
+            config.DependencyResolver = GlobalConfiguration.Configuration.DependencyResolver;
+            
             server = new HttpSelfHostServer(config);
             server.OpenAsync().Wait();
         }
