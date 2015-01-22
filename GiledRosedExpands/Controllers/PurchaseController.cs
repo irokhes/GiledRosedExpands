@@ -10,17 +10,12 @@ namespace GiledRosedExpands.Controllers
     {
         readonly IPurchaseRepository _purchaseRepository;
         readonly IItemRepository _itemRepository;
+        const string RouteName = "DefaultApi";
 
         public PurchaseController(IPurchaseRepository purchaseRepository, IItemRepository itemRepository)
         {
             _purchaseRepository = purchaseRepository;
             _itemRepository = itemRepository;
-        }
-
-        [HttpGet]
-        public IHttpActionResult Get(int id)
-        {
-            return Ok(_purchaseRepository.Get(id));
         }
 
         [HttpPost]
@@ -29,12 +24,12 @@ namespace GiledRosedExpands.Controllers
             if (!ModelState.IsValid)
             {
                 //Return error
-                BadRequest(ModelState);
+                return BadRequest(ModelState);
             }
             var item = _itemRepository.Get(purchaseViewModel.ItemName);
             if (item == null)
             {
-                return BadRequest("The item is no longer available");
+                return NotFound();
             }
             var purchase = new Purchase
             {
@@ -43,7 +38,8 @@ namespace GiledRosedExpands.Controllers
                 Username = purchaseViewModel.Username
             };
             purchaseViewModel.PurchaseId = _purchaseRepository.Create(purchase);
-            return CreatedAtRoute("DefaultApi", new {id = 3}, purchaseViewModel);
+            
+            return CreatedAtRoute(RouteName, new {id = purchaseViewModel.PurchaseId}, purchaseViewModel);
         }
     }
 }

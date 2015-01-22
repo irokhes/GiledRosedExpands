@@ -6,9 +6,9 @@ To run machine.specifications unit test from Resharper it's needed to install **
 
 Considerations
 -----------
-Due the low complexity of this code I haven't added a Sevice layer that would't add any benefits at this point of development. In case one of the methods grows we will refactor the code.
+Due the low complexity of this code I haven't added a service layer that wouldn't add much benefits at this point of development.
 
-The same reason applies to not make db calls async, if in the future we have more time consuming process we could added. Not having asynchronous methods makes the code less complex and easier to debug (ideally won't be needed ;-)
+The same reason applies to not make DB calls async, there are no expensive DB calls. Performing an async operation is vastly more complicated than performing a sync operation.
 
 Data format
 -----------
@@ -57,14 +57,14 @@ Output data
 Security
 -----------
 
-In order to verify the request comes from the actual buyer we can apply different techniques:
+In order to verify the request comes from the real buyer we can apply different techniques:
 
 HTTPS
  With HTTPS, your traffic is far less likely to be subject to packet sniffing attacks. If we want to make sure that every request comes
  from https, the best option is use an Action filter 
  
 Authentication filters
- Authentication filters let you set an authentication scheme for individual controllers or actions. In this case would use token-based authentication.
+ Authentication filters let us set an authentication scheme for individual controllers or actions. In this case would use token-based authentication.
 
  
 Authorization filters
