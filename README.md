@@ -8,7 +8,7 @@ Considerations
 -----------
 Due the low complexity of this code I haven't added a service layer that wouldn't add much benefits at this point of development.
 
-The same reason applies to not make DB calls async, there are no expensive DB calls. Performing an async operation is vastly more complicated than performing a sync operation.
+The same reason applies to not make DB calls async, there are no expensive DB calls. Performing an async operation is vastly more complicated than performing a sync operation (in terms of what happens behind the scenes).
 
 Data format
 -----------
