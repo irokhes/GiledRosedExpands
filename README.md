@@ -1,9 +1,22 @@
 # GiledRosedExpands
 
+## How to run the test
+
+To run machine.specifications unit test from Resharper it's needed to install **Machine.Specifications.Runner.Resharper** from Resharper extension manager
+
+Considerations
+-----------
+Due the low complexity of this code I haven't added a Sevice layer that would't add any benefits at this point of development. In case one of the methods grows we will refactor the code.
+
+The same reason applies to not make db calls async, if in the future we have more time consuming process we could added. Not having asynchronous methods makes the code less complex and easier to debug (ideally won't be needed ;-)
+
 Data format
+-----------
 GET localhost:3512/api/items
 
-output data
+Output data
+
+```json
 [
 	{
 		"Name": "Item 1",
@@ -21,23 +34,28 @@ output data
 		"Price": 30
 	}
 ]
+```
 POST localhost:3512/api/purchases
 
-input data
+Input data
 
+```json
 {
     "ItemName": "Item 1",
     "Username": "Jorge"
 }
+```
+Output data
 
-output data
+```json
 {
 	"PurchaseId": 2,
 	"ItemName": "Item 1",
 	"Username": "Jorge"
 }
-
+```
 Security
+-----------
 
 In order to verify the request comes from the actual buyer we can apply different techniques:
 
