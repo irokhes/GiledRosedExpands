@@ -16,6 +16,7 @@ namespace GiledRosedExpands.Infrastructure.Repositories
                 new Item{ Name = "Item 1", Description = "Description item 1", Price = 10},
                 new Item{ Name = "Item 2", Description = "Description item 2", Price = 20},
                 new Item{ Name = "Item 3", Description = "Description item 3", Price = 30},
+                new Item{ Name = "Book", Description = "Description book", Price = 30},
             };    
         }
         public IEnumerable<Item> GetAll()
